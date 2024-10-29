@@ -1,46 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ecarbona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 15:57:31 by ecarbona          #+#    #+#             */
-/*   Updated: 2024/10/28 15:57:37 by ecarbona         ###   ########.fr       */
+/*   Created: 2024/10/29 10:43:41 by ecarbona          #+#    #+#             */
+/*   Updated: 2024/10/29 10:43:43 by ecarbona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <string.h>
 
-char	*ft_strstr(char *str, char *to_find)
+unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
-	int	i;
-	int	c;
+	int				i;
+	int				c;
+	unsigned int	a;
 
 	i = 0;
-	if (*to_find == '\0')
+	c = 0;
+	while (dest[c] != '\0')
 	{
-		return (str);
+		c++;
 	}
-	while (str[i] != '\0')
+	a = c;
+	while (src[i] != '\0')
 	{
-		c = 0;
-		while (str[i + c] == to_find[c])
-		{
-			c++;
-		}
-		if (to_find[c] == '\0')
-			return (&str[i]);
+		if (a < size - 1)
+			dest[a] = src[i];
+		else if (src[i + 1] == '\0')
+			i++;
 		i++;
+		a++;
 	}
-	return (NULL);
+	dest[a] = '\0';
+	return (i + c);
 }
 /*
-int	main()
+int main()
 {
-	char	str[] = "eliminaCOPIAelimina";
-	char	find[] = "P";
-	printf("%s", ft_strstr(str, find));
-	
+	char src[] = "Mario";
+	char dest[20] = "Ciao ";
+
+	unsigned int size = 6;
+   	printf("%d\n", ft_strlcat(dest, src, size));
+	printf("%s", dest);
 }*/

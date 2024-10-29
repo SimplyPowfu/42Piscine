@@ -20,7 +20,7 @@ int	ft_strcmp(char *s1, char *s2)
 
 	i = 0;
 	c = 0;
-	while(s2[i] != '\0')
+	while (s2[c] != '\0')
 	{
 		c++;
 	}
@@ -36,7 +36,7 @@ int	ft_strcmp(char *s1, char *s2)
 		}
 		i++;
 	}
-	return (i-c);
+	return (i - c);
 }
 /*
 int	main()

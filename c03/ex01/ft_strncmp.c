@@ -12,9 +12,9 @@
 
 #include <stdio.h>
 
-int	ft_strcmp(char *s1, char *s2, unsigned int n)
+int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
 	while (i < n)
@@ -31,7 +31,7 @@ int	ft_strcmp(char *s1, char *s2, unsigned int n)
 	}
 	return (0);
 }
-
+/*
 int	main()
 {
 	int r;
@@ -48,4 +48,4 @@ int	main()
 	} else {
 		printf("La seconda stringa è minore della prima stringa.\n");
 	}
-}
+}*/

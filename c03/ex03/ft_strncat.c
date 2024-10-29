@@ -13,10 +13,10 @@
 #include <stdio.h>
 #include <string.h>
 
-char	*ft_strcat(char *dest, char *src, unsigned int nb)
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
-	int	i;
-	int	c;
+	int				c;
+	unsigned int	i;
 
 	if (nb > 0)
 	{
@@ -43,8 +43,7 @@ int main()
 {
 	unsigned int nb = 4;
 	char str[] = "Prima";
-	char dest[] = "Seconda";
+	char dest[20] = "Seconda";
 	printf("%s", ft_strcat(dest, str, nb));
 	//printf("%s", strncat(dest, str, nb));
-}
-*/
+}*/

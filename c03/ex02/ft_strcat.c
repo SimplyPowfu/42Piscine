@@ -39,7 +39,7 @@ char	*ft_strcat(char *dest, char *src)
 int main()
 {
 	char str[] = "Prima";
-	char dest[] = "Seconda";
+	char dest[20] = "Seconda";
 	printf("%s", ft_strcat(dest, str));
 	//printf("%s", strcat(dest, str));
 }
