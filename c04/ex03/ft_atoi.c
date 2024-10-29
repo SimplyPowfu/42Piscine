@@ -17,7 +17,7 @@ int	ft_atoi(char *str)
 	int	i;
 	int	c;
 	int	atoi;
-	int min;
+	int	min;
 
 	i = 0;
 	c = 0;
@@ -41,6 +41,6 @@ int	ft_atoi(char *str)
 
 int	main()
 {
-	char str[] = "---+--+1234ab";
+	char str[] = "---+--+1234ab56789";
 	printf("%d", ft_atoi(str));
 }
