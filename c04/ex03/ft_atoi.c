@@ -29,7 +29,7 @@ int	ft_atoi(char *str)
 		{
 			min = -min;
 		}
-		while (str[i + c] >= '1' && str[i + c] <= '9')
+		while (str[i + c] >= '0' && str[i + c] <= '9')
 		{
 			atoi = ((atoi * 10) + (str[i + c] - 48)); 
 			c++;
@@ -41,6 +41,6 @@ int	ft_atoi(char *str)
 
 int	main()
 {
-	char str[] = "---+--+1234ab56789";
+	char str[] = "---+--+104ab56789";
 	printf("%d", ft_atoi(str));
 }
