@@ -1,45 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ecarbona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/24 11:13:21 by ecarbona          #+#    #+#             */
-/*   Updated: 2024/10/24 11:13:23 by ecarbona         ###   ########.fr       */
+/*   Created: 2024/10/24 10:36:24 by ecarbona          #+#    #+#             */
+/*   Updated: 2024/10/24 10:36:26 by ecarbona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <string.h>
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+int	ft_strcmp(char *s1, char *s2)
 {
-	unsigned int	i;
+	int	i;
 
 	i = 0;
-	while (i < n)
+	while (s1[i] != '\0')
 	{
-		if (s1[i] < s2[i])
-		{
-			return (s1[i] - s2[i]);
-		}
-		else if (s1[i] > s2[i])
+		if (s1[i] < s2[i] || s1[i] > s2[i])
 		{
 			return (s1[i] - s2[i]);
 		}
 		i++;
 	}
-	return (0);
+	return (s1[i] - s2[i]);
 }
 /*
 int	main()
 {
 	int r;
-	unsigned n = 4;
-	char str1[] = "ProvA";
-	char str2[] = "Prova";
+	char str1[] = "Prova";
+	char str2[] = "ProvA";
 	
-	r = ft_strcmp(str1, str2, n);
+	r = strcmp(str1, str2);
 
 	if(r == 0){
 		printf("Le due stringhe sono identiche!\n");

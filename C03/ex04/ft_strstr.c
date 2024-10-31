@@ -1,46 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ecarbona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/24 12:08:17 by ecarbona          #+#    #+#             */
-/*   Updated: 2024/10/24 12:08:18 by ecarbona         ###   ########.fr       */
+/*   Created: 2024/10/28 15:57:31 by ecarbona          #+#    #+#             */
+/*   Updated: 2024/10/28 15:57:37 by ecarbona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
 
-char	*ft_strcat(char *dest, char *src)
+char	*ft_strstr(char *str, char *to_find)
 {
 	int	i;
 	int	c;
 
-	c = 0;
-	while (dest[c] != '\0')
+	i = 0;
+	if (*to_find == '\0')
+		return (str);
+	while (str[i] != '\0')
 	{
-		c++;
-		if (dest[c] == '\0')
-		{
-			i = 0;
-			while (src[i] != '\0')
-			{
-				dest[c] = src[i];
-				i++;
-				c++;
-			}
-		}
+		c = 0;
+		while (str[i + c] == to_find[c] && str[i + c] != '\0')
+			c++;
+		if (to_find[c] == '\0')
+			return (&str[i]);
+		i++;
 	}
-	return (dest);
+	return (0);
 }
 /*
-int main()
+int	main()
 {
-	char str[] = "Prima";
-	char dest[20] = "Seconda";
-	printf("%s", ft_strcat(dest, str));
-	//printf("%s", strcat(dest, str));
-}
-*/
+	char	str[] = "eliminaCOPIAelimina";
+	char	find[] = "P";
+	printf("%s", ft_strstr(str, find));
+	
+}*/

@@ -15,32 +15,32 @@
 int	ft_atoi(char *str)
 {
 	int	i;
-	int	c;
 	int	atoi;
 	int	min;
 
 	i = 0;
-	c = 0;
 	atoi = 0;
 	min = 1;
-	while (str[i] != '\0' && c == 0)
+	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
+		i++;
+	while (str[i] == '+' || str[i] == '-')
 	{
-		if(str[i] == '-')
+		if (str[i] == '-')
 		{
 			min = -min;
 		}
-		while (str[i + c] >= '0' && str[i + c] <= '9')
-		{
-			atoi = ((atoi * 10) + (str[i + c] - 48)); 
-			c++;
-		}
+		i++;
+	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		atoi = ((atoi * 10) + (str[i] - 48));
 		i++;
 	}
 	return (atoi * min);
 }
-
+/*
 int	main()
 {
 	char str[] = "---+--+104ab56789";
 	printf("%d", ft_atoi(str));
-}
+}*/
