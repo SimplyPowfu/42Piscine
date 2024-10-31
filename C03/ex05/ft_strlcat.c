@@ -25,12 +25,10 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 		c++;
 	}
 	a = c;
-	while (src[i] != '\0')
+	while (src[i] != '\0' )
 	{
-		if (a < size - 1)
+		if (a < size)
 			dest[a] = src[i];
-		else if (src[i + 1] == '\0')
-			i++;
 		i++;
 		a++;
 	}
@@ -43,7 +41,7 @@ int main()
 	char src[] = "Mario";
 	char dest[20] = "Ciao ";
 
-	unsigned int size = 6;
+	unsigned int size = 3;
    	printf("%d\n", ft_strlcat(dest, src, size));
 	printf("%s", dest);
 }*/
