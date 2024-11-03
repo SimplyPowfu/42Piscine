@@ -12,28 +12,24 @@
 
 #include <stdio.h>
 
+int	ft_strlen(char *str)
+{
+	unsigned int	len;
+
+	len = 0;
+	while (str[len] != '\0')
+		len++;
+	return (len);
+}
+
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
-	int				i;
-	int				c;
-	unsigned int	a;
+	unsigned int	len_dest;
+	unsigned int	len_src;
 
-	i = 0;
-	c = 0;
-	while (dest[c] != '\0')
-	{
-		c++;
-	}
-	a = c;
-	while (src[i] != '\0' )
-	{
-		if (a < size)
-			dest[a] = src[i];
-		i++;
-		a++;
-	}
-	dest[a] = '\0';
-	return (i + c);
+	len_dest = ft_strlen(dest);
+	len_src = ft_strlen(src);
+	return (len_dest + len_src + size);
 }
 /*
 int main()
