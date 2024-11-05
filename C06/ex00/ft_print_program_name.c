@@ -17,7 +17,7 @@ int	main(int argc, char **argv)
 	int	i;
 
 	i = 0;
-	while (argv[0][i] != '\0')
+	while (argv[0][i] != '\0' && argc)
 	{
 		write (1, &argv[0][i], 1);
 		i++;
