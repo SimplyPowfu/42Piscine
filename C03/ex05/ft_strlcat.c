@@ -20,22 +20,22 @@ int	ft_strlen(char *str)
 	return (len);
 }
 
-unsigned int	ft_strlcat(char *dst, char *src, size_t size)
+unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
 	unsigned int	len1;
 	unsigned int	len2;
 	unsigned int	i;
 
-	len1 = ft_strlen(dst);
+	len1 = ft_strlen(dest);
 	len2 = ft_strlen(src);
 	i = 0;
 	if (size <= len1)
 		return (len2 + size);
 	while (len1 + i < size - 1 && src[i] != '\0')
 	{
-		dst[len1 + i] = src[i];
+		dest[len1 + i] = src[i];
 		i++;
 	}
-	dst[len1 + i] = '\0';
+	dest[len1 + i] = '\0';
 	return (len1 + len2);
 }
