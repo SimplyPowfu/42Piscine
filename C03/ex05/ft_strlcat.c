@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
 int	ft_strlen(char *str)
 {
 	unsigned int	len;
@@ -22,22 +20,22 @@ int	ft_strlen(char *str)
 	return (len);
 }
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+unsigned int	ft_strlcat(char *dst, char *src, size_t size)
 {
-	unsigned int	len_dest;
-	unsigned int	len_src;
+	unsigned int	len1;
+	unsigned int	len2;
+	unsigned int	i;
 
-	len_dest = ft_strlen(dest);
-	len_src = ft_strlen(src);
-	return (len_dest + len_src + size);
+	len1 = ft_strlen(dst);
+	len2 = ft_strlen(src);
+	i = 0;
+	if (size <= len1)
+		return (len2 + size);
+	while (len1 + i < size - 1 && src[i] != '\0')
+	{
+		dst[len1 + i] = src[i];
+		i++;
+	}
+	dst[len1 + i] = '\0';
+	return (len1 + len2);
 }
-/*
-int main()
-{
-	char src[] = "Mario";
-	char dest[20] = "Ciao ";
-
-	unsigned int size = 3;
-   	printf("%d\n", ft_strlcat(dest, src, size));
-	printf("%s", dest);
-}*/
